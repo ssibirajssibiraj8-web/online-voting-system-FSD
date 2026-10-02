@@ -1,0 +1,308 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+  
+  body {
+    background-color: #F0FDF4; /* Soft Electoral Light Green */
+    color: #0F172A;            /* Deep readable slate text */
+    font-family: 'Manrope', 'Plus Jakarta Sans', 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-editorial {
+    font-family: 'Playfair Display', 'Cormorant Garamond', serif;
+  }
+}
+
+/* Custom luxury light scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #E6F7EC;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #A7F3D0;
+  border-radius: 9999px;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #10B981;
+}
+
+/* Glassmorphic light surfaces */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid #A7F3D0;
+  color: #0F172A;
+  box-shadow: 0 4px 20px -2px rgba(16, 185, 129, 0.08);
+}
+
+.glass-card {
+  background: #FFFFFF;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid #A7F3D0;
+  box-shadow: 0 10px 25px -5px rgba(5, 150, 105, 0.08), 0 0 1px 1px rgba(16, 185, 129, 0.12);
+  color: #0F172A;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  border-color: #10B981;
+  box-shadow: 0 15px 35px -10px rgba(5, 150, 105, 0.18), 0 0 15px 0px rgba(16, 185, 129, 0.25);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #065F46 0%, #047857 40%, #059669 70%, #10B981 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-border-glow {
+  border: 1px solid rgba(16, 185, 129, 0.45);
+  box-shadow: 0 0 20px -2px rgba(16, 185, 129, 0.25);
+}
+
+/* =========================================================================
+   COMPREHENSIVE LIGHT THEME OVERRIDES (REMOVE ALL DARK COLOURS)
+   ========================================================================= */
+
+/* Base & Body */
+body,
+html.theme-light-green body,
+[data-theme="light-green"] body,
+html.light body {
+  background-color: #F0FDF4 !important; /* Soft, luminous light green */
+  color: #0F172A !important;
+}
+
+/* Background utilities remaps - NO DARK COLOURS */
+.bg-\[\#07080B\],
+.bg-\[\#07080B\]\/95,
+.bg-\[\#07080B\]\/90,
+.bg-\[\#07080B\]\/80,
+.bg-\[\#07080B\]\/60,
+.bg-\[\#07080B\]\/50,
+.bg-\[\#07080B\]\/40 {
+  background-color: #F0FDF4 !important; /* Electoral Light Green Base */
+}
+
+.bg-\[\#101217\],
+.bg-\[\#101217\]\/95,
+.bg-\[\#101217\]\/90,
+.bg-\[\#101217\]\/80,
+.bg-\[\#101217\]\/60,
+.bg-\[\#101217\]\/50,
+.bg-\[\#101217\]\/40 {
+  background-color: #FFFFFF !important; /* Crisp Card / Surface White */
+}
+
+.bg-\[\#151820\],
+.bg-\[\#151820\]\/95,
+.bg-\[\#151820\]\/90,
+.bg-\[\#151820\]\/80,
+.bg-\[\#151820\]\/60,
+.bg-\[\#151820\]\/50,
+.bg-\[\#151820\]\/40,
+.bg-\[\#151820\]\/30,
+.bg-\[\#151820\]\/20 {
+  background-color: #E6F7EC !important; /* Soft Tinted Mint Accent Surface */
+}
+
+.bg-\[\#1A1E29\],
+.bg-\[\#1e2230\],
+.bg-\[\#0B0D13\] {
+  background-color: #F8FAFC !important;
+}
+
+/* Border utilities remap - Crisp Light Emerald Borders */
+.border-\[\#242834\],
+.border-\[\#242834\]\/80,
+.border-\[\#242834\]\/60,
+.border-\[\#242834\]\/40 {
+  border-color: #A7F3D0 !important; /* Light mint/emerald border */
+}
+
+.border-white\/5,
+.border-white\/10,
+.border-white\/15,
+.border-white\/20 {
+  border-color: rgba(16, 185, 129, 0.25) !important;
+}
+
+/* Typography remaps - High Contrast & Crisp */
+.text-\[\#F5F5F2\],
+.text-platinum,
+.text-\[\#F5F5F0\],
+.text-white {
+  color: #0F172A !important; /* Dark Slate for 100% legibility */
+}
+
+.text-\[\#9699A3\],
+.text-\[\#8E929E\],
+.text-\[\#A0A3AD\] {
+  color: #334155 !important; /* Slate-700 for subtitles */
+}
+
+.text-\[\#D1D5DB\],
+.text-\[\#E2E8F0\] {
+  color: #1E293B !important; /* Slate-800 */
+}
+
+/* Gold text on light green: deep rich forest emerald or warm amber for readability */
+.text-\[\#E5C98A\],
+.text-\[\#C9A96E\] {
+  color: #047857 !important; /* Rich deep emerald */
+}
+
+/* Light badge backgrounds */
+.bg-\[\#16A085\]\/20,
+.bg-\[\#16A085\]\/30 {
+  background-color: #D1FAE5 !important; /* Soft light emerald */
+  color: #047857 !important;
+}
+
+.bg-\[\#8E24AA\]\/20,
+.bg-\[\#8E24AA\]\/30 {
+  background-color: #F3E8FF !important; /* Soft pastel purple */
+}
+
+.border-\[\#8E24AA\]\/40,
+.border-\[\#8E24AA\]\/30 {
+  border-color: #C084FC !important;
+}
+
+.bg-\[\#C9A96E\]\/20,
+.bg-\[\#C9A96E\]\/10 {
+  background-color: #FEF3C7 !important; /* Soft pastel amber */
+}
+
+.bg-\[\#FF9933\]\/20,
+.bg-\[\#FF9933\]\/10 {
+  background-color: #FFEDD5 !important; /* Soft pastel orange */
+}
+
+.bg-\[\#FBC02D\]\/20,
+.bg-\[\#FBC02D\]\/10 {
+  background-color: #FEF9C3 !important; /* Soft pastel yellow */
+}
+
+/* Remove dark gradient overlays */
+.from-\[\#07080B\] {
+  --tw-gradient-from: transparent !important;
+}
+
+/* Header & Footer */
+header {
+  background-color: rgba(240, 253, 244, 0.95) !important;
+  border-color: #A7F3D0 !important;
+  box-shadow: 0 1px 3px 0 rgba(5, 150, 105, 0.05);
+}
+
+footer {
+  background-color: #E6F7EC !important;
+  border-color: #A7F3D0 !important;
+  color: #0F172A !important;
+}
+
+/* Form inputs & select options */
+input,
+textarea,
+select {
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
+  border-color: #A7F3D0 !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #64748B !important;
+}
+
+select option {
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
+}
+
+/* Indian mesh background in light mode */
+.indian-mesh-bg {
+  position: relative;
+  background-color: #F0FDF4 !important;
+  background-image: radial-gradient(rgba(16, 185, 129, 0.12) 1.5px, transparent 1.5px) !important;
+  background-size: 28px 28px !important;
+}
+
+.indian-mesh-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 600px;
+  background: 
+    radial-gradient(circle at 20% 15%, rgba(16, 185, 129, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 80% 20%, rgba(52, 211, 153, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 50% 30%, rgba(201, 169, 110, 0.08) 0%, transparent 55%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Subtle geometric rotating ring animation */
+@keyframes subtle-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-subtle-spin {
+  animation: subtle-spin 120s linear infinite;
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.15;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 8s ease-in-out infinite;
+}
+
+/* Light skeleton shimmer */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(220, 245, 230, 0.6) 25%,
+    rgba(167, 243, 208, 0.8) 37%,
+    rgba(220, 245, 230, 0.6) 63%
+  );
+  background-size: 400% 100%;
+  animation: shimmer 1.8s ease-in-out infinite;
+}
